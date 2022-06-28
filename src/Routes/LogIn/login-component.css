@@ -1,1 +1,23 @@
-/* No CSS *//*# sourceMappingURL=login-component.css.map */
+.registerForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.inputBorderDetail {
+  border: none;
+}
+
+.inputDetailconfiguration {
+  width: 25%;
+  height: 150%;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=login-component.css.map */
