@@ -1,6 +1,17 @@
+import { useContext, useEffect } from 'react';
+import { UserContext } from '../../Components/Context/user-context.jsx';
 import './login-component.scss';
 
 function LogIn(){
+    /*
+    const { setIsLogIn } = useContext(UserContext);
+
+    useEffect(() =>{
+        setIsLogIn(true);
+    });
+    */
+
+
     return(
         <div >
             <form className='text-center registerForm' method='get' action="">
