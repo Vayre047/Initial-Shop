@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { UserContext } from '../../Components/Context/user-context.jsx';
 import './header-component.scss';
+import NavBar from './NavBar/navbar-component.jsx';
 
 function Header(){
     /*
@@ -30,6 +31,7 @@ function Header(){
                     <Link id='isSignedIn' className='configurationLinks text-dark' to='/login'>Log In</Link>
                 </div>
             </div>
+            <NavBar />
         </div>
     )
 }
