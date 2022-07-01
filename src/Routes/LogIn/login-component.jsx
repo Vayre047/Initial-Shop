@@ -10,16 +10,17 @@ function LogIn(){
         setIsLogIn(true);
     });
     */
+    
 
 
     return(
-        <div >
+        <div>
             <form className='text-center registerForm' method='get' action="">
                 <div className='form-group pt-3'>
                     <label htmlFor="loginEmail"></label>
                     <input className='border-info inputDetailconfiguration' type="text" name='e-mail' aria-label='E-mail' placeholder='Coloque o seu e-mail' maxLength='30' required />
                 </div>
-                <div className='form-group pt-4 pb-2'>
+                <div className='form-group pt-3'>
                     <label htmlFor="loginPassword"></label>
                     <input className='border-info inputDetailconfiguration' type="password" name='loginPassword' placeholder='Coloque a sua password' minLength='3' maxLength='30' required />
                 </div>

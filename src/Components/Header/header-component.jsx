@@ -5,7 +5,14 @@ import { UserContext } from '../../Components/Context/user-context.jsx';
 import './header-component.scss';
 
 function Header(){
+    /*
     const { isSignIn, isLogIn } = useContext(UserContext);
+    
+    const isLoggedIn = document.getElementById("isLoggedIn");
+    const isSignedIn = document.getElementById("isSignedIn");
+
+    isLoggedIn === true || isSignedIn === true ? 
+    */
 
     return(
         <div className='container'>
@@ -15,18 +22,12 @@ function Header(){
                         <img className='ps-3 pt-2' src="../../../Images/homepage-icon.png" alt="Homepage Icon" />
                     </Link>
                 </div>
-                    {
-                        (isSignIn === true || isLogIn === true) ?
-                                <div></div>
-                        :
-                            <div className='col-6 text-center pt-3'>
-                                <input className='preferences-input text-center' type="text" placeholder='Search whatever you want' />
-                            </div>
-                    }
-                {console.log(isSignIn)}
+                    <div className='col-6 text-center pt-3'>
+                        <input className='preferences-input text-center' type="text" placeholder='Search whatever you want' />
+                    </div>
                 <div className='col text-center pt-3'>
-                    <Link className='configurationLinks pe-5 text-dark' to='/register'>Sign In</Link>
-                    <Link className='configurationLinks text-dark' to='/login'>Log In</Link>
+                    <Link id='isLoggedIn' className='configurationLinks pe-5 text-dark' to='/register'>Sign In</Link>
+                    <Link id='isSignedIn' className='configurationLinks text-dark' to='/login'>Log In</Link>
                 </div>
             </div>
         </div>
