@@ -1,74 +1,48 @@
+import { Link } from 'react-router-dom';
+import { ProductDetail} from '../../Products/product-db';
+import { ProductType } from '../../Products/product-type-db';
 import './navbar-component.scss';
 
 function NavBar(){
+
+    let brands = [];
+    let newbrands = [];
+
+    function getBrands(code){
+        brands = ProductDetail.filter((brand) => 
+            brand.product_type_code.includes(code)
+        )
+
+        newbrands = [...new Set(brands.map(data => data.product_brand))];
+
+        return newbrands;
+    }
+
     return(
         <div className='navbarPosition'>
-            <nav class="navbar navbar-expand-lg navbarDetail">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse text-center" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item dropdown border border-transparent">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Television
-                                </a>
-                                <ul class="dropdown-menu dropdownDetail pe-5" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">LG</a></li>
-                                    <li><a class="dropdown-item" href="#">Samsung</a></li>
-                                    <li><a class="dropdown-item" href="#">Sony</a></li>
-                                    <li><a class="dropdown-item" href="#">TCL</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown ps-5">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Mobile Phone
-                                </a>
-                                <ul class="dropdown-menu dropdownDetail ps-5" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Samsung</a></li>
-                                    <li><a class="dropdown-item" href="#">Apple</a></li>
-                                    <li><a class="dropdown-item" href="#">Huawei</a></li>
-                                    <li><a class="dropdown-item" href="#">LG</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown ps-5">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Desktops
-                                </a>
-                                <ul class="dropdown-menu dropdownDetail ps-5" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Apple</a></li>
-                                    <li><a class="dropdown-item" href="#">HP</a></li>
-                                    <li><a class="dropdown-item" href="#">Dell</a></li>
-                                    <li><a class="dropdown-item" href="#">ASUS</a></li>
-                                
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown ps-5">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Laptops
-                                </a>
-                                <ul class="dropdown-menu dropdownDetail ps-5" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Apple</a></li>
-                                    <li><a class="dropdown-item" href="#">HP</a></li>
-                                    <li><a class="dropdown-item" href="#">Dell</a></li>
-                                    <li><a class="dropdown-item" href="#">ASUS</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown ps-5">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Accessories
-                                </a>
-                                <ul class="dropdown-menu dropdownDetail ps-5" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Apple</a></li>
-                                    <li><a class="dropdown-item" href="#">HP</a></li>
-                                    <li><a class="dropdown-item" href="#">LeNovo</a></li>
-                                    <li><a class="dropdown-item" href="#">Microsoft</a></li>
-                                </ul>
-                            </li>
+            <nav className="navbar navbar-expand-lg navbarDetail">
+                <div className="container-fluid">
+                    <div className="collapse navbar-collapse text-center" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                            {
+                                ProductType.map((type, index) =>
+                                    <li className="nav-item dropdown border border-transparent" key={index}>
+                                        <Link className="nav-link dropdown-toggle" to='/ProductView' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">{type.parent_name}</Link>
+                                        <ul className="dropdown-menu dropdownDetail pe-5" aria-labelledby="navbarDropdown">
+                                            {getBrands(type.product_type_code).map((product, index) =>
+                                                <li key={index}>
+                                                    <Link className="dropdown-item" to='/ProductView'>{product}</Link>
+                                                </li>
+                                            )}
+                                        </ul>      
+                                    </li>   
+                                )
+                            }
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-
     );
 }
 
