@@ -4,6 +4,7 @@ import ProductView from './Components/Product View/product-view-component';
 import Header from './Components/Header/header-component';
 import Register from './Routes/Register/register-component';
 import LogIn from './Routes/LogIn/login-component';
+import Footer from './Components/Footer/footer-component';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<LogIn />}/>
       </Routes>
+      <Footer />
     </div>
   );
 }

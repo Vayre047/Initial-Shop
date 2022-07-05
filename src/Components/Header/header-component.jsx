@@ -1,20 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useContext, useState } from 'react';
-import { UserContext } from '../../Components/Context/user-context.jsx';
 import './header-component.scss';
 import NavBar from './NavBar/navbar-component.jsx';
+import { UserContext } from '../../Context/user-context';
 
 function Header(){
-    /*
+    
     const { isSignIn, isLogIn } = useContext(UserContext);
     
-    const isLoggedIn = document.getElementById("isLoggedIn");
-    const isSignedIn = document.getElementById("isSignedIn");
+    console.log(isLogIn);
+    /*
+    if (isLogIn === true || isSignIn === true) {
+        <div></div>
+    } else {
 
-    isLoggedIn === true || isSignedIn === true ? 
-    */
-
+    }*/
     return(
         <div className='container'>
             <div className='row'>

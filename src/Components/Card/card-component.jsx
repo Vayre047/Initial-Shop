@@ -9,7 +9,8 @@ function Card({details, index}){
                 <div className='card-body'>
                     <p className='h5 card-title text-center'>{details.product_name}</p>
                     <p className='card-text text-center'>{details.product_description }</p>
-                    <Link to=''></Link>
+                    <Link className='text-center linkConfiguration text-info' to={details.product_image_URL}>Veja Mais</Link>
+                    <p className='text-end'>{details.product_price} €</p>
                 </div>
             </div>
         </div>

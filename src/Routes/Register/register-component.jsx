@@ -1,5 +1,5 @@
 import { useContext, useEffect } from 'react';
-import { UserContext } from '../../Components/Context/user-context.jsx';
+import { UserContext } from '../../Context/user-context.jsx';
 import './register-component.scss';
 
 function Register(){
@@ -12,7 +12,7 @@ function Register(){
 
 
     return(
-        <div className='text-center pt-2'>
+        <form onSubmit={onsubmit} className='text-center pt-2'>
             <div className='pt-3 form-group'>
                 <label htmlFor="firstName"></label>
                 <input className='border-info inputRegisterInput' type="text" placeholder="Digite o seu nome" required/>
@@ -40,7 +40,7 @@ function Register(){
             <div className='pt-3'>
                 <button className='btn btn-secondary' type='submit'>Sign In</button>
             </div>
-        </div>
+        </form>
     )
 }
 

@@ -1,4 +1,8 @@
 .imageProperties {
   border: transparent;
 }
+
+.linkConfiguration {
+  text-decoration: none;
+}
 /*# sourceMappingURL=card-component.css.map */
