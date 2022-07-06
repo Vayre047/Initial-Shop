@@ -6,6 +6,7 @@ function LogIn(){
     
     const { setIsLogIn } = useContext(UserContext);
     const onSubmit = (event) => {
+        event.preventDefault();
         setIsLogIn(true);
     }
 
@@ -18,7 +19,7 @@ function LogIn(){
                     type="text"
                     name='e-mail'
                     aria-label='E-mail'
-                        placeholder='Type your e-mail'
+                    placeholder='Type your e-mail or username'
                     minLength='3'
                     maxLength='30'
                     required />
