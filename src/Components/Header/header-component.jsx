@@ -4,10 +4,23 @@ import { useContext } from 'react';
 import './header-component.scss';
 import NavBar from './NavBar/navbar-component.jsx';
 import { UserContext } from '../../Context/user-context';
+import { Customers } from '../Profile/customers-db.jsx';
+
 
 function Header(){
     
-    const { isSignIn, isLogIn } = useContext(UserContext);
+    const { isSignIn, isLogIn, currentUser } = useContext(UserContext);
+
+    let customer = [];
+
+    function customerDetail(){
+        customer = Customers.filter((x) => 
+            x.email.includes(currentUser.email)
+        );
+
+        console.log(JSON.stringify(customer.first_name));
+        return JSON.stringify(customer.first_name);
+    }
 
     return(
         <div className='container'>
@@ -22,9 +35,19 @@ function Header(){
                         <input className='preferences-input text-center' type="text" placeholder='Search whatever you want' />
                     </div>
                 }
-                <div className='col text-end pt-3'>
-                    <Link id='isLoggedIn' className='configurationLinks pe-5 text-dark' to='/register'>Sign In</Link>
-                    <Link id='isSignedIn' className='configurationLinks text-dark' to='/login'>Log In</Link>
+                <div className='col text-end pt-5'>
+                {
+                    (isLogIn === true || isSignIn === true) ? 
+                          
+                        <div>
+                            <p>Bem Vindo, {customerDetail()}</p>
+                        </div>
+                        : 
+                        <div>
+                            <Link id='isLoggedIn' className='configurationLinks pe-5 text-dark' to='/register'>Sign In</Link>
+                            <Link id='isSignedIn' className='configurationLinks text-dark' to='/login'>Log In</Link>
+                        </div>
+                }
                 </div>
             </div>
             <NavBar />

@@ -7,4 +7,7 @@
 .configurationLinks {
   text-decoration: none;
 }
-/*# sourceMappingURL=header-component.css.map */
+
+.navbarPosition {
+  padding: 0 0 -20% 0;
+}/*# sourceMappingURL=header-component.css.map */

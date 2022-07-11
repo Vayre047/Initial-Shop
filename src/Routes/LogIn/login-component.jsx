@@ -1,13 +1,25 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../Context/user-context.jsx';
 import './login-component.scss';
 
 function LogIn(){
     
-    const { setIsLogIn } = useContext(UserContext);
+    const [formFields, setformFields] = useState({
+        email: ''
+    });
+
+    const { setCurrentUser, setIsLogIn } = useContext(UserContext);
     const onSubmit = (event) => {
         event.preventDefault();
+        const { email, password } = formFields;
         setIsLogIn(true);
+        setCurrentUser({email: email});
+    }
+
+    const onChange = (event) => {
+        const { name, value } = event.target;
+
+        setformFields({ ...formFields, [name]: value })
     }
 
     return(
@@ -17,12 +29,14 @@ function LogIn(){
                     <label htmlFor="loginEmail"></label>
                     <input className='border-info inputDetailconfiguration' 
                     type="text"
-                    name='e-mail'
+                    name='email'
                     aria-label='E-mail'
                     placeholder='Type your e-mail or username'
+                    onChange={onChange}
                     minLength='3'
                     maxLength='30'
-                    required />
+                    required
+                    />
                 </div>
                 <div className='form-group pt-3'>
                     <label htmlFor="loginPassword"></label>
@@ -35,8 +49,7 @@ function LogIn(){
                     required 
                     />
                 </div>
-                <div className='form-group pt-3
-                '>
+                <div className='form-group pt-3'>
                     <label htmlFor="loginCheckBox">
                         <input type="checkbox" name='loginCheckBox' aria-label='loginCheckBox' />Remember me
                     </label>

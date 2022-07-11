@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 function LogOut(){
     return(
         <div>
-            <Link to="/login">LogOut</Link>
+            <Link id='isLogOut' to="/login">LogOut</Link>
         </div>
     )
 }
