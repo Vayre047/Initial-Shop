@@ -2,6 +2,11 @@
     width: 50%;
     height: 80%;
     border: transparent;
+    background-color: #f8f2ec;
+}
+
+.preferences-input::after{
+    padding: 0 20% 0;
 }
 
 .configurationLinks{
@@ -11,3 +16,4 @@
 .navbarPosition{
     padding: 0 0 -20% 0;
 }
+

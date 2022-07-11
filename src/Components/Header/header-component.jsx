@@ -18,8 +18,7 @@ function Header(){
             x.email.includes(currentUser.email)
         );
 
-        console.log(JSON.stringify(customer.first_name));
-        return JSON.stringify(customer.first_name);
+        return customer[0];
     }
 
     return(
@@ -31,19 +30,23 @@ function Header(){
                     </Link>
                 </div>
                 {
-                    (isLogIn === true || isSignIn === true) ? <div></div> : <div className='col-6 text-center pt-3'>
+                    (isLogIn === true || isSignIn === true) ? <div className='col-6 pt-5'><p className='text-center h4'>Bem Vindo, {customerDetail().first_name} {customerDetail().last_name}</p></div> : <div className='col-6 text-center pt-3'>
                         <input className='preferences-input text-center' type="text" placeholder='Search whatever you want' />
                     </div>
                 }
                 <div className='col text-end pt-5'>
                 {
                     (isLogIn === true || isSignIn === true) ? 
-                          
-                        <div>
-                            <p>Bem Vindo, {customerDetail()}</p>
+                        <div className='d-flex justify-content-end'>
+                            <div>
+                                    <Link className='configurationLinks text-dark' to=''>Profile</Link>
+                            </div>
+                            <div>
+                                    <Link className='ps-3 configurationLinks text-dark' to='/login'>LogOut</Link>
+                            </div>
                         </div>
                         : 
-                        <div>
+                            <div className='welcomeSettings'>
                             <Link id='isLoggedIn' className='configurationLinks pe-5 text-dark' to='/register'>Sign In</Link>
                             <Link id='isSignedIn' className='configurationLinks text-dark' to='/login'>Log In</Link>
                         </div>
