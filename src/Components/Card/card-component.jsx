@@ -4,8 +4,8 @@ import './card-component.scss';
 function Card({details, index}){
     return(
         <div className='col'>
-            <div className="card pt-3 bg-transparent ps-3 d-flex imageProperties" key={index}>
-                <img src={details.product_image_URL} className="card-img-top img-fluid rounded bg-transparent" alt="Card Image" />
+            <div className="card pt-3 bg-transparent img-fluid ps-3 d-flex imageProperties" key={index}>
+                <img src={details.product_image_URL} className="card-img-top rounded bg-transparent" alt="Card Image" />
                 <div className='card-body'>
                     <p className='h5 card-title text-center'>{details.product_name}</p>
                     <p className='card-text text-center'>{details.product_description }</p>

@@ -39,10 +39,10 @@ function Header(){
                     (isLogIn === true || isSignIn === true) ? 
                         <div className='d-flex justify-content-end'>
                             <div>
-                                    <Link className='configurationLinks text-dark' to=''>Profile</Link>
+                                <Link className='configurationLinks text-dark' to='/profile'>Profile</Link>
                             </div>
                             <div>
-                                    <Link className='ps-3 configurationLinks text-dark' to='/login'>LogOut</Link>
+                                <Link className='ps-3 configurationLinks text-dark' to='/login'>LogOut</Link>
                             </div>
                         </div>
                         : 

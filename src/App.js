@@ -8,6 +8,7 @@ import LogIn from './Routes/LogIn/login-component';
 import Footer from './Components/Footer/footer-component';
 import Homepage from './Components/Homepage/homepage-component';
 import { UserContext } from './Context/user-context';
+import Profile from './Routes/Profile/profile-component';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" exact={true} element={<Homepage />} />
         <Route path='/productview' element={<ProductView />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='/register' element={isSignIn ? <Homepage /> : <Register />} />
         <Route path='/login' element={isLogIn ? <Homepage /> : <LogIn />  }/>
       </Routes>
