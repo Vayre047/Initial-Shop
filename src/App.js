@@ -8,7 +8,7 @@ import LogIn from './Routes/LogIn/login-component';
 import Footer from './Components/Footer/footer-component';
 import Homepage from './Components/Homepage/homepage-component';
 import { UserContext } from './Context/user-context';
-import Profile from './Routes/Profile/profile-component';
+import Profile from './Routes/User Profile/user-profile-component';
 
 function App() {
 

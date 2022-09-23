@@ -6,7 +6,6 @@ import NavBar from './NavBar/navbar-component.jsx';
 import { UserContext } from '../../Context/user-context';
 import { Customers } from '../Profile/customers-db.jsx';
 
-
 function Header(){
     
     const { isSignIn, isLogIn, currentUser } = useContext(UserContext);

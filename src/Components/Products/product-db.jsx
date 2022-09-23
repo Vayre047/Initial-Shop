@@ -155,7 +155,7 @@ export const ProductDetail = [
         product_price: "1199",
         product_color: "Gold",
         product_description: "13.3'' - Apple M1 - RAM: 16 GB - 256 GB SSD - GPU 7-Core",
-        product_image_URL: "",
+        product_image_URL: "https://www.worten.pt/i/0822515fcb9f76e386604e358b4f7d57941f6e4d.jpg",
         product_type_code: "3",
         product_brand: "Apple"
     },
